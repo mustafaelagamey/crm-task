@@ -14,17 +14,17 @@
 
                             @if ($errors->has('first_name'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('first_name') }}</strong>
                                     </span>
                             @endif
                             @if ($errors->has('last_name'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('last_name') }}</strong>
                                     </span>
                             @endif
                             @if ($errors->has('employee'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>{{ $errors->first('employee') }}</strong>
                                     </span>
                             @endif
 
