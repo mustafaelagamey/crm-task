@@ -35,42 +35,42 @@ if some one wish to add more functionality to the system like editing and deleti
 
 make sure you have php7 , composer installed , and git
 
-1-clone the repo from github:
+#### 1-clone the repo from github:
 
 git clone https://github.com/mustafaelagamey/crm-task.git
 
-2-go to project folder
+#### 2-go to project folder
 
 cd crm-task
 
-3-install composer dependencies
+#### 3-install composer dependencies
 
 composer install
 
-4-copy .env.example to .env to create .env :
+#### 4-copy .env.example to .env to create .env :
 
 copy .env.example .env
 
 
-5-generate security key :
+#### 5-generate security key :
 
 php artisan key:generate
 
 
-6-create mysql database for testing on local host
+#### 6-create mysql database for testing on local host
 
-7-configure .env db name, user , password settings to access the database
+#### 7-configure .env db name, user , password settings to access the database
 
-8-migrate with seed :
+#### 8-migrate with seed :
 
 php artisan migrate --seed
 
-9-run artisan server
+#### 9-run artisan server
 
 php artisan serve
 
 
-10-browse localhost:8000
+#### 10-browse localhost:8000
 
 
 
@@ -87,13 +87,18 @@ pass : emp2emp2
 
 ## Requsts :
 ### Admin
+
 admin add employee
+
 admin add customer
+
 admin can assign customer to employee
 
 ### Employee
-employee can add customer
-employee add action and  record result for action
+
+mployee can add customer
+
+mployee add action and  record result for action
 
 ##Used:
 models , views , controllers ,routes , some service provider for form building
