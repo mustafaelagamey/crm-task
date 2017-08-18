@@ -14,13 +14,9 @@
                 </div>
 
                 <div>
-                    @if(Auth::user()->role->role==='admin')
-                        @include('pages.admin')
-                        @elseif(Auth::user()->role->role==='employee')
-                        @include('pages.employee')
-                        @else
-                        please Log in
-                        @endif
+
+                    @include('pages.home')
+
                 </div>
 
             </div>

@@ -24,11 +24,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    //creating the relation role user  (one to many)
     public function role()
     {
         return $this->belongsTo('App\Role');
     }
 
+    //creating the relation employee customer (one to many)
     public function customers()
     {
         return $this->hasMany('App\Customer','employee_id');

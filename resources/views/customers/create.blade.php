@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         <h3>Welcome our {{ Auth::user()->role->name }}</h3>
-                        <br>
+                        <p>Here  the admin or employee can fill form to create new customer</p>
                         <h4>Create New Customer</h4>
 
                         {{Form::open(['route'=>'customer.store'])}}
@@ -29,19 +29,14 @@
                                 {{ Form::select('employee', $employees, null, ['placeholder' => 'Select Employee ...' , 'class'=>'form-control'])}}
                             @endif
                         </div>
-
-
                         @if(Auth::user()->role->role==='employee')
 
                         {{Form::checkbox('action', null, true, array('class' => 'name'))}}
                         {{ Form::label('action', 'Add Action' , ['class' => 'control-label']) }}
                         @endif
-
                         <br>
-
-
-
                         {{Form::submit('Add',["class"=>"btn btn-success"]) }}
+                        {{ Html::linkRoute( 'customer.index', 'Show Customers',[],["class"=>"btn btn-primary"])}}
                         {{ Html::linkRoute( 'home', 'home',[],["class"=>"btn btn-primary"])}}
                         {{Form::close()}}
 

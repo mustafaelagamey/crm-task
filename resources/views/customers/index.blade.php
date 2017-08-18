@@ -9,10 +9,8 @@
 
                     <div class="panel-body">
                         <h3>Welcome our {{ Auth::user()->role->name }}</h3>
-                        <br>
+                        <p>Here here the admin can show all customers or employee can show related customers</p>
                         <h4>Our Customers</h4>
-
-
                         <table class="table ">
                             <thead>
                                 <tr>
@@ -30,12 +28,9 @@
                                     <th>
                                         Edit
                                     </th>
-
-
                                 </tr>
                             </thead>
                             <tbody>
-
                                 @foreach($customers as $customer)
                                     <tr>
                                         <td>
@@ -49,35 +44,23 @@
                                         <td>
                                             {{$customer->employee->name}}
                                         </td>
-
                                         <td>
-
                                             @if(Auth::user()->role->role==='employee')
                                             {{ Html::linkRoute( 'customer-action.create', 'Action',[$customer->id],["class"=>"btn btn-success"])}}
                                             @endif
-
                                             {{ Html::linkRoute( 'customer.show', 'Details',[$customer->id],["class"=>"btn btn-primary"])}}
 
                                                 @if(Auth::user()->role->role==='admin')
-                                                    {{ Html::linkRoute( 'customer-employee.edit', 'Change Employee',[$customer->id],["class"=>"btn btn-success"])}}
+                                                    {{ Html::linkRoute( 'customer-employee.edit', 'Change Employee',[$customer->id],["class"=>"btn btn-danger"])}}
                                                 @endif
-
-
-
-
                                         </td>
-
-
                                     </tr>
                                 @endforeach
                             </tbody>
-
                         </table>
+                        {{ Html::linkRoute( 'customer.create', 'Add Customer',[],["class"=>"btn btn-success"])}}
                         {{ Html::linkRoute( 'home', 'home',[],["class"=>"btn btn-primary"])}}
-
                     </div>
-
-
                 </div>
             </div>
         </div>

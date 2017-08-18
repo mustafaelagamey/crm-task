@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         <h3>Welcome our {{ Auth::user()->role->name }}</h3>
-                        <br>
+                        <p>Here here the user can see customer details and actions</p>
                         <h4>Customer Details</h4>
 
                         <div>
@@ -37,7 +37,9 @@
 
                         {{ Html::linkRoute( 'customer-action.create', 'Add Action',[$customer->id],["class"=>"btn btn-success"])}}
                         {{ Html::linkRoute( 'customer.index', 'Show Customers',[],["class"=>"btn btn-primary"])}}
-
+                        @if(Auth::user()->role->role==='admin')
+                            {{ Html::linkRoute( 'customer-employee.edit', 'Change Employee',[$customer->id],["class"=>"btn btn-danger"])}}
+                        @endif
                         {{ Html::linkRoute( 'home', 'home',[],["class"=>"btn btn-primary"])}}
 
 
@@ -45,7 +47,7 @@
                             <thead>
                                 <tr>
                                     <th>
-                                       Action
+                                        Action
                                     </th>
                                     <th>
                                         Date

@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         <h3>Welcome our {{ Auth::user()->role->name }}</h3>
-                        <br>
+                        <p>Here here the admin can fill form to create new employee</p>
                         <h4>Create New Employee</h4>
 
                         {{Form::open(['route'=>'employee.store'])}}

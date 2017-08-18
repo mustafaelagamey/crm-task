@@ -8,13 +8,13 @@ class Action extends Model
 {
     //
 
-    // require pivot table
+    //creating the relation customer action (one to many)
     public function customer(){
         return $this->belongsTo('App\Customer');
     }
 
 
-    // require type_id
+    //creating the relation  type action  (one to many)
     public function type(){
         return $this->belongsTo('App\Type');
     }

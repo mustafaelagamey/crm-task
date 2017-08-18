@@ -14,7 +14,9 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
+            //foreign key of the related employee
             $table->integer('employee_id');
+            // user name columns
             $table->string('first_name');
             $table->string('last_name');
             $table->timestamps();

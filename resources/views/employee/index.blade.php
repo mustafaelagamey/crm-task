@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         <h3>Welcome our {{ Auth::user()->role->name }}</h3>
-                        <br>
+                        <p>Here here the admin show all employees</p>
                         <h4>Our Employees</h4>
 
 

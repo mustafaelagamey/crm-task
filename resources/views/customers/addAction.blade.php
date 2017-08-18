@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         <h3>Welcome our {{ Auth::user()->role->name }}</h3>
-                        <br>
+                        <p>Here the user can add action to the customer</p>
                         <h4>Create New Action For Customer: {{$customer->first_name ."  ".  $customer->last_name   }} </h4>
 
 

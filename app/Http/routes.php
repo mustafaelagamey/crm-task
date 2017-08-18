@@ -11,21 +11,29 @@
 |
 */
 
+
+//welcome page
 Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::auth();
 
+
+// crm system main page
 Route::get('/home', ['uses'=>'HomeController@index', 'as'=>'home']);
 
-
+// adding authentication middleware to system
 Route::group(['middleware' => 'auth'], function () {
 
 
+    // selecting resource for further use for editing and deleting
     Route::resource('employee', 'EmployeeController');
     Route::resource('customer', 'CustomerController');
 
+
+    //adding other customer-related processes
 
     Route::get('customer/{customer}/action-create', ['uses'=>'CustomerController@createAction','as'=>'customer-action.create']);
     Route::post('customer/{customer}/action-store', ['uses'=>'CustomerController@storeAction','as'=>'customer-action.store']);

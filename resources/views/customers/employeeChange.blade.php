@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         <h3>Welcome our {{ Auth::user()->role->name }}</h3>
-                        <br>
+                        <p>Here the admin can assign customer to employee</p>
                         <h4>Change Customer Employee</h4>
 
                         {{Form::open(['route'=>['customer-employee.update',$customer->id ], 'method' => 'Patch'])}}
