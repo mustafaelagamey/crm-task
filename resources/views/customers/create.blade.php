@@ -6,10 +6,29 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">Dashboard</div>
-                       <div class="panel-body">
+                    <div class="panel-body">
                         <h3>Welcome our {{ Auth::user()->role->name }}</h3>
-                        <p>Here  the admin or employee can fill form to create new customer</p>
+                        <p>Here the admin or employee can fill form to create new customer</p>
                         <h4>Create New Customer</h4>
+                        @if(!$errors->isEmpty())
+
+                            @if ($errors->has('first_name'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                            @endif
+                            @if ($errors->has('last_name'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
+                            @if ($errors->has('employee'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
+
+                        @endif
 
                         {{Form::open(['route'=>'customer.store'])}}
 
@@ -30,8 +49,8 @@
                         </div>
                         @if(Auth::user()->role->role==='employee')
 
-                        {{Form::checkbox('action', null, true, array('class' => 'name'))}}
-                        {{ Form::label('action', 'Add Action' , ['class' => 'control-label']) }}
+                            {{Form::checkbox('action', null, true, array('class' => 'name'))}}
+                            {{ Form::label('action', 'Add Action' , ['class' => 'control-label']) }}
                         @endif
                         <br>
                         {{Form::submit('Add',["class"=>"btn btn-success"]) }}
