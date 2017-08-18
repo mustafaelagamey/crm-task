@@ -43,9 +43,9 @@ git clone https://github.com/mustafaelagamey/crm-task.git
 
 cd crm-task
 
-#### 3-install composer dependencies
+#### 3-update and install composer dependencies
 
-composer install
+composer update
 
 #### 4-copy .env.example to .env to create .env :
 

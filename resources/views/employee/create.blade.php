@@ -11,7 +11,29 @@
                         <h3>Welcome our {{ Auth::user()->role->name }}</h3>
                         <p>Here here the admin can fill form to create new employee</p>
                         <h4>Create New Employee</h4>
+                        @if(!$errors->isEmpty())
 
+                            @if ($errors->has('name'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                            @endif
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
+                            @if ($errors->has('password'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
+                            @if ($errors->has('class'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('class') }}</strong>
+                                    </span>
+                            @endif
+                        @endif
                         {{Form::open(['route'=>'employee.store'])}}
 
                         <div class="form-group">

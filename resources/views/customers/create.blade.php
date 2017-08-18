@@ -6,8 +6,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">Dashboard</div>
-
-                    <div class="panel-body">
+                       <div class="panel-body">
                         <h3>Welcome our {{ Auth::user()->role->name }}</h3>
                         <p>Here  the admin or employee can fill form to create new customer</p>
                         <h4>Create New Customer</h4>
