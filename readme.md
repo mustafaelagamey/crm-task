@@ -33,7 +33,7 @@ if some one wish to add more functionality to the system like editing and deleti
 
 ## Time to run application
 
-make sure you have php7 , composer installed , and git
+make sure you have php7 prefered , composer installed , and git
 
 #### 1-clone the repo from github:
 
