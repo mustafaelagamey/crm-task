@@ -30,3 +30,81 @@ roles also are dynamic
 I wanted to use resource routes and resource controller 
 if some one wish to add more functionality to the system like editing and deleting 
 
+
+## Time to run application
+
+make sure you have php7 , composer installed , and git
+
+1-clone the repo from github:
+
+git clone https://github.com/mustafaelagamey/crm-task.git
+
+2-go to project folder
+
+cd crm-task
+
+3-install composer dependencies
+
+composer install
+
+4-copy .env.example to .env to create .env :
+
+copy .env.example .env
+
+
+5-generate security key :
+
+php artisan key:generate
+
+
+6-create mysql database for testing on local host
+
+7-configure .env db name, user , password settings to access the database
+
+8-migrate with seed :
+
+php artisan migrate --seed
+
+9-run artisan server
+
+php artisan serve
+
+
+10-browse localhost:8000
+
+
+
+## Created test users :
+
+admin user : admin@admin.admin ,
+pass : adminadmin
+
+employee user 1 : emp1@emp1.emp1 ,
+pass : emp1emp1
+
+employee user 2 : emp2@emp2.emp2 ,
+pass : emp2emp2
+
+## Requsts :
+### Admin
+admin add employee
+admin add customer
+admin can assign customer to employee
+
+### Employee
+employee can add customer
+employee add action and  record result for action
+
+##Used:
+models , views , controllers ,routes , some service provider for form building
+migration and seeding to intialize test data
+
+laravel relation one to many for user role and action type and association of relations
+authentication system for admin and employees
+
+
+
+
+
+
+
